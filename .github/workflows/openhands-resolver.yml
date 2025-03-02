@@ -1,5 +1,4 @@
 name: Auto-Fix Tagged Issue with OpenHands
-
 on:
   workflow_call:
     inputs:
