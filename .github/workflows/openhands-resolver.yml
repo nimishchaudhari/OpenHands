@@ -58,6 +58,7 @@ permissions:
 
 jobs:
   auto-fix:
+    runs-on: self-hosted
     if: |
       github.event_name == 'workflow_call' ||
       github.event.label.name == 'fix-me' ||
@@ -73,7 +74,6 @@ jobs:
         (github.event.review.author_association == 'OWNER' || github.event.review.author_association == 'COLLABORATOR' || github.event.review.author_association == 'MEMBER')
         )
       )
-    runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
